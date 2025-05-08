@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{jsreport}
+\usepackage[utf8]{inputenc} 
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{url}
+
+\title{I112 レポート課題1}
+\author{2410151 廣島峻吾}
+\date{2025年5月8日}
+
+\begin{document}
+
+\maketitle
+
+\section{課題内容}
+自分の手で「mv」，「cp」，「cp -r」の挙動を調査して，そのレポートをOverleafで作成してください．
+
+\section{方法}
+「mv」は\cite{bib:mv}，「cp」は\cite{bib:cp}，「cp -r」は\cite{bib:cp-r}を参考に，各コマンドを実行する．
+
+\section{結果}
+ a.txt，b.txt（テキストファイル）および folder1，folder2（フォルダ）を対象に，「mv」，「cp」，「cp -r」コマンドを実行した際の挙動の比較を表~\ref{tbl:lcr} に示す．\par また，これらのコマンドにより生じた一連のファイル操作の結果を，図\ref{fig:chart1}，図\ref{fig:chart2}，図\ref{fig:chart3}に示す．
+
+% 表
+\begin{table}[h]
+\caption{mv, cp, cp -r の挙動比較}
+\label{tbl:lcr} 
+\begin{tabular}{|l||c|}
+\hline
+\textbf{コマンド} & \textbf{挙動} \\
+\hline
+\texttt{mv a.txt [ディレクトリ名]} & \texttt{a.txtが[ディレクトリ名]に移動した} \\
+\hline
+\texttt{cp a.txt b.txt} & \texttt{a.txtがb.txtとして複製された} \\
+\hline
+\texttt{cp -r folder1 folder2} & \texttt{folder1とその中身がfolder2にコピーした} \\
+\hline
+\end{tabular}
+\end{table}
+
+% 図
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{chart1.pdf}
+\caption{「mv」の一連のファイル操作}
+\label{fig:chart1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{chart2.pdf}
+\caption{「cp」の一連のファイル操作}
+\label{fig:chart2}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{chart3.pdf}
+\caption{「cp -r」の一連のファイル操作}
+\label{fig:chart3}
+\end{figure}
+
+\bibliography{ckf.bib}
+\bibliographystyle{junsrt}
+
+\end{document}
